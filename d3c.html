@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SpaceData - Mars Visualizations</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+		<style>
+			svg {
+			  font: 10px sans-serif;
+			}
+			
+			.background path {
+			  fill: none;
+			  stroke: none;
+			  stroke-width: 20px;
+			  pointer-events: stroke;
+			}
+			
+			.foreground path {
+			  fill: none;
+			  stroke: steelblue;
+			  stroke-width: 1.5px;
+			}
+			
+			.axis .title {
+			  font-size: 11px;
+			  font-weight: bold;
+			  text-transform: uppercase;
+			}
+			
+			.axis line,
+			.axis path {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+			
+			.label {
+			  -webkit-transition: fill 125ms linear;
+			}
+			
+			.active .label:not(.inactive) {
+			  font-weight: bold;
+			}
+			
+			.label.inactive {
+			  fill: #ccc;
+			}
+			
+			.foreground path.inactive {
+			  stroke: #ccc;
+			  stroke-opacity: .5;
+			  stroke-width: 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="chart2"></div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/chart3.js"></script>
+	</body>

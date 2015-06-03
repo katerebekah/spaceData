@@ -1,21 +1,124 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>SpaceData - Mars Visualizations</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+        <link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/d3.parcoords.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
+    
     <body>
-    		
-		<div id="main">
-			<p></p>
-        </div>
-	
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="js/main.js"></script>
+        <section class="hero">
+            <div class="row intro">
+                <div class="small-4 medium-4 large-4 columns">
+                    <h1>Mars</h1>
+                </div>
+                <div class="small-8 medium-8 large-8 columns">
+                    <h1>
+                        <span class="small">Data, art, and space</span>
+                    </h1>
+                </div>
+            </div>
+        
+        <section id="boxes">
+            <div class="large-3 columns">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="59.0043" y1="29.013" x2="239.9957" y2="210.0043">
+                        <stop offset="0" style="stop-color:#FFFFFF" />
+                        <stop offset="0" style="stop-color:#FFF6CC" />
+                        <stop offset="3.992021e-003" style="stop-color:#FFF5CA" />
+                        <stop offset="0.1381" style="stop-color:#FFE299" />
+                        <stop offset="0.2756" style="stop-color:#FFD16F" />
+                        <stop offset="0.4144" style="stop-color:#FFC44D" />
+                        <stop offset="0.5548" style="stop-color:#FFB932" />
+                        <stop offset="0.6975" style="stop-color:#FFB21F" />
+                        <stop offset="0.844" style="stop-color:#FFAD14" />
+                        <stop offset="1" style="stop-color:#FFAC10" />
+                    </linearGradient>
+                    <path fill="url(#SVGID_1_)" d="M299,150.2v0.8H0v-0.8C0,67.5,66.8,0.4,149.5,0.4S299,67.5,299,150.2z" />
+                    <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="300" y1="150.5" x2="300" y2="150.5" />
+                    <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="0" y1="150.5" x2="0" y2="150.5" />
+                    <rect y="151" width="300" height="149" />
+                    <ellipse fill="#FFFFD0" cx="13.9" cy="183.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="147.9" cy="169.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="230.9" cy="222.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="130.9" cy="246.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="146.9" cy="185.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="292.9" cy="212.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="291.9" cy="165.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="90.9" cy="284.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="41.9" cy="212.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="81.9" cy="192.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="279.9" cy="253.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="64.9" cy="254.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="160.9" cy="288.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="215.9" cy="207.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="27.9" cy="160.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="106.9" cy="233.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="180.9" cy="211.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="216.9" cy="239.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="187.9" cy="161.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="155.9" cy="266.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="115.9" cy="196.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="272.9" cy="196.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="242.9" cy="285.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="31.9" cy="240.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="247.9" cy="190.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="54.9" cy="181.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="68.9" cy="276.2" rx="0.9" ry="0.8" />
+                    <ellipse fill="#FFFFD0" cx="277.9" cy="290.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="232.9" cy="167.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="13.9" cy="220.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="144.9" cy="216.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="265.9" cy="216.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="189.9" cy="260.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="194.9" cy="179.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="270.9" cy="165.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="81.9" cy="218.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="81.9" cy="163.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="120.9" cy="274.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="29.9" cy="274.2" rx="2.3" ry="2.1" />
+                    <ellipse fill="#FFFFD0" cx="249.9" cy="256.2" rx="2.3" ry="2.1" />
+                    <circle fill="#AEB0B0" cx="238.3" cy="212.6" r="23.3" />
+                    <circle fill="#AEB0B0" cx="51.5" cy="259.7" r="29.4" />
+                    <rect x="11.6" y="3.4" fill="none" width="279.4" height="74.7" />
+                    <text transform="matrix(1 0 0 1 21.6174 31.0911)">
+                        <tspan x="0" y="0" font-family="'Nova Square'" font-size="29">Current Conditions</tspan>
+                        <tspan x="47.6" y="37.2" font-family="'Nova Square'" font-size="21">Sunny and Cold</tspan>
+                    </text>
+                    <rect y="118.1" fill="none" width="300" height="64.8" />
+                    <text transform="matrix(1 0 0 1 98.7736 139.5547)">
+                        <tspan x="0" y="0" font-family="'Nova Square'" font-size="21" id="tempHigh"></tspan>
+                        <tspan x="-0.8" y="37.2" fill="#CFDEE5" font-family="'Nova Square'" font-size="21" id="tempLow">;</tspan>
+                    </text>
+                    <rect y="289.1" fill="none" width="300" height="10.3" />
+                    <text transform="matrix(1 0 0 1 70.5514 295)" fill="#CFDEE5" font-family="'Nova Square'" font-size="9" id="recordedDate"></text>
+                </svg>
+            </div>
+            <a href="threejs.html">
+            <div class="large-3 columns threejs">
+                <p></p>
+            </div>
+            </a>
+            <a href="d3.html">
+            <div class="large-3 columns d3">
+                <p></p>
+            </div>
+            </a>
+            <div class="large-3 columns">
+                <p></p>
+            </div>
+        </section>
+        </section>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src='js/currentConditions.js'></script>
     </body>
+
 </html>
