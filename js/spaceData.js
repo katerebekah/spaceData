@@ -1,6 +1,6 @@
 //(function() {
     //Gather Asteroid API Data
-    var asteroids = [];
+/*    var asteroids = [];
 
     function getAPIdata() {
             $.ajax({
@@ -11,7 +11,7 @@
             });
         }
         getAPIdata();
-
+*/
     //Set the scene
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(45, window.innerHeight / window.innerHeight, 0.1, 200000);
@@ -30,7 +30,6 @@
         });
         var sphere = new THREE.Mesh(geometry, material);
         sphere.position.set(planetData.x, planetData.y, planetData.z);
-        sphere.v = planetData.v;
         return sphere;
     };
 
@@ -137,27 +136,6 @@
     	Uranus.position.set(uranus.x* Math.cos(time/uranus.s), uranus.x* Math.sin(time/uranus.s), 0);
     	Neptune.position.set(neptune.x* Math.cos(time/neptune.s), neptune.x* Math.sin(time/neptune.s), 0);
     }
-
-
-
-
-    //gravitational constant
-    var G = 6.67384e-11;
-    var sunMass = 1.989E30;
-
-    function getAcceleration(distance) {
-        return G * sunMass / (Math.pow(distance, 2));
-    }
-
-    var MercuryVelocity = getAcceleration(57.9);
-    var VenusVelocity = getAcceleration(108.2);
-    var EarthVelocity = getAcceleration(149.6);
-    var MarsVelocity = getAcceleration(227.9);
-    var JupiterVelocity = getAcceleration(778.6);
-    var SaturnVelocity = getAcceleration(1433.5);
-    var UranusVelocity = getAcceleration(2872.5);
-    var NeptuneVelocity = getAcceleration(4495.1);
-
 
     //Make Asteroids
 
