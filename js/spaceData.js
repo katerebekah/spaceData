@@ -1,4 +1,3 @@
-//(function() {
     //Gather Asteroid API Data
 /*    var asteroids = [];
 
@@ -14,22 +13,23 @@
 */
     //Set the scene
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(45, window.innerHeight / window.innerHeight, 0.1, 200000);
+    var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.5, 100000);
 
     var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerHeight, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
     //Make Planets/Sun
     var makePlanets = function(planetData) {
         var geometry = new THREE.SphereGeometry(planetData.r, 64, 64);
         var texture = THREE.ImageUtils.loadTexture(planetData.img);
-        texture.minFilter = THREE.NearestFilter;
         var material = new THREE.MeshBasicMaterial({
             map: texture
         });
         var sphere = new THREE.Mesh(geometry, material);
         sphere.position.set(planetData.x, planetData.y, planetData.z);
+       // quaternion = new THREE.Quaternion().setFromAxisAngle( planetData.axisOfRotation, planetData.angleOfRotation );
+       // sphere.rotation.setEulerFromQuaternion( quaternion );
         return sphere;
     };
 
@@ -150,22 +150,20 @@
     scene.add(Uranus);
     scene.add(Neptune);
 
-    camera.position.set(0,0,50);
+    camera.position.set(0,2500,100);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    // Renders the scene and updates the render as needed.
+    // Renders the scene and sets the planets on orbit.
     function animate() {
 
-          // Read more about requestAnimationFrame at http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
           requestAnimationFrame(animate);
     
           // Render the scene.
           renderer.render(scene, camera);
-           orbit();
+          orbit();
 
           controls.update();
 
     }
     animate();
-//})();
